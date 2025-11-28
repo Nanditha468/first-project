@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+        input, button {
+            padding: 8px;
+            margin-top: 10px;
+        }
+        #msg {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Email Check</h2>
+
+<input type="text" id="email" placeholder="Enter your email">
+<button onclick="validateEmail()">Check</button>
+
+<p id="msg"></p>
+
+<script>
+function validateEmail() {
+    let email = document.getElementById("email").value;
+
+    // Simple email regex
+    let pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (pattern.test(email)) {
+        document.getElementById("msg").style.color = "green";
+        document.getElementById("msg").innerHTML = "Valid Email ✔️";
+    } else {
+        document.getElementById("msg").style.color = "red";
+        document.getElementById("msg").innerHTML = "Invalid Email ❌";
+    }
+}
+</script>
+
+</body>
+</html>
